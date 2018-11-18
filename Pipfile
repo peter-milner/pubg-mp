@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 pylint = "*"
+progress = "*"
 
 [dev-packages]
 
