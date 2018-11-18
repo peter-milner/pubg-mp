@@ -1,2 +1,2 @@
 #Exclude local environment variables
-.env.local
+.env
