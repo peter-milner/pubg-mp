@@ -1,5 +1,5 @@
 # pubg-mp
-Match Placement Prediction
+Match Placement Prediction for the popular online game: PUBG.
 
 ## Installation
 
