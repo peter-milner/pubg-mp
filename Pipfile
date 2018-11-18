@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 pylint = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
