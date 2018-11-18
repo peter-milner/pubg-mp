@@ -9,3 +9,9 @@ Match Placement Prediction for the popular online game: PUBG
 ```pipenv install```
 3. Install pre-commit hook:
 ```./scripts/install-precommit-hook.sh```
+4. Copy .env and fill in key
+```cp .env.sample .env```
+
+## Running
+
+```pipenv run <command>```
