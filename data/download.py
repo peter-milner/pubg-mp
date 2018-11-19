@@ -29,7 +29,7 @@ def get_match_data(sample_matches):
     for match in sample_matches:
         url = "https://api.pubg.com/shards/pc-na/matches/{}".format(match['id'])
         request = requests.get(url, headers=HEADER).json()
-        matches += request
+        matches.append(request)
         p_bar.next()
     p_bar.finish()
 
