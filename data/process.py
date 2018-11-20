@@ -97,7 +97,6 @@ def process_raw_matches():
 
     matches = import_matches("data/raw/{}".format(filename))
     players = matches_to_players(matches)
-    #["3214d28c-4a05-4f3e-8a0a-15ffd45b6da9"])
     out_filename = "data/processed/{}".format(filename)
     convert_to_csv(players, out_filename)
 
