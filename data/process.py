@@ -47,6 +47,7 @@ KEYS = [
     "shardId",
     "isCustomMatch",
     "duration",
+    "match_id",
 ]
 
 def import_matches(filename):
@@ -60,6 +61,7 @@ def matches_to_players(matches):
     for match in matches:
         # Extract general match information first
         attributes = match["data"]["attributes"]
+        attributes["match_id"] = match["data"]["id"]
         players = {}
         for obj in match["included"]:
             if obj["type"] == "participant":
@@ -84,8 +86,7 @@ def convert_to_csv(players, filename):
     '''Convert the players into a csv'''
     with open(filename, 'w') as output:
         writer = csv.writer(output)
-        #Uncomment to write headers
-        #writer.writerow(KEYS)
+        writer.writerow(KEYS)
         for key, value in players.items():
             data = [key] + [value[key] for key in KEYS[1:]]
             writer.writerow(data)
