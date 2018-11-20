@@ -1,2 +1,5 @@
 #Exclude local environment variables
 .env
+
+#MacOS file
+.DS_Store

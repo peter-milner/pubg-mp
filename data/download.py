@@ -6,6 +6,13 @@ import json
 import requests
 from progress.bar import Bar
 
+API_KEY = os.getenv('PUBG_API_KEY')
+
+HEADER = {
+    "Authorization": "Bearer {}".format(API_KEY),
+    "Accept": "application/vnd.api+json"
+}
+
 def get_sample_matches():
     '''Retrieves sample matches'''
 
@@ -43,12 +50,5 @@ def get_match_data(sample_matches):
     print("Match data saved in \"{}\"".format(file_name))
 
 print("Attempting to grab sample matches...")
-
-API_KEY = os.getenv('PUBG_API_KEY')
-
-HEADER = {
-    "Authorization": "Bearer {}".format(API_KEY),
-    "Accept": "application/vnd.api+json"
-}
 
 get_match_data(get_sample_matches())
