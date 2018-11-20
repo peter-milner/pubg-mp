@@ -84,7 +84,8 @@ def convert_to_csv(players, filename):
     '''Convert the players into a csv'''
     with open(filename, 'w') as output:
         writer = csv.writer(output)
-        writer.writerow(KEYS)
+        #Uncomment to write headers
+        #writer.writerow(KEYS)
         for key, value in players.items():
             data = [key] + [value[key] for key in KEYS[1:]]
             writer.writerow(data)
