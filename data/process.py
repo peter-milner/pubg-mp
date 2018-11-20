@@ -95,7 +95,7 @@ def process_raw_matches():
     "Ex: \"matches-2018-11-18T19:33:05.278801\":\n")
     type(filename)
 
-    matches = import_matches("data/raw/{}".format(filename))
+    matches = import_matches("data/raw/{}.csv".format(filename))
     players = matches_to_players(matches)
     out_filename = "data/processed/{}".format(filename)
     convert_to_csv(players, out_filename)
