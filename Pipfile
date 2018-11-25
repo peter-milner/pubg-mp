@@ -6,6 +6,11 @@ name = "pypi"
 [packages]
 pylint = "*"
 progress = "*"
+jupyter = "*"
+pandas = "*"
+sklearn = "*"
+numpy = "*"
+matplotlib = "*"
 
 [dev-packages]
 
