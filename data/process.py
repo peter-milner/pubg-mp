@@ -48,6 +48,7 @@ KEYS = [
     "isCustomMatch",
     "duration",
     "match_id",
+    "playerCount"
 ]
 
 def import_matches(filename):
@@ -79,6 +80,9 @@ def matches_to_players(matches):
                     if participant["id"] not in players:
                         players[participant["id"]] = {}
                     players[participant["id"]]["group_id"] = obj["attributes"]["stats"]["teamId"]
+        # Add match player count to each player row (since it holds match info as well)
+        for key in players:
+            players[key]["playerCount"] = len(players)
         all_players.update(players)
     return all_players
 
