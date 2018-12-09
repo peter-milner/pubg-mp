@@ -36,7 +36,7 @@ KEYS = [
     "winPlace",
     "winPoints",
     "winPointsDelta",
-    "group_id",
+    "groupId",
     "stats",
     "tags",
     "mapName",
@@ -73,7 +73,7 @@ def matches_to_players(matches):
                     players[obj["id"]].update(obj["attributes"]["stats"])
                 else:
                     players[obj["id"]] = obj["attributes"]["stats"]
-                    players[obj["id"]]["group_id"] = -1
+                    players[obj["id"]]["groupId"] = -1
                 #Add match attributes
                 players[obj["id"]].update(attributes)
             elif obj["type"] == "roster":
@@ -82,7 +82,7 @@ def matches_to_players(matches):
                 for participant in obj["relationships"]["participants"]["data"]:
                     if participant["id"] not in players:
                         players[participant["id"]] = {}
-                    players[participant["id"]]["group_id"] = obj["attributes"]["stats"]["teamId"]
+                    players[participant["id"]]["groupId"] = obj["attributes"]["stats"]["teamId"]
         # Add match player count to each player row (since it holds match info as well)
         for key in players:
             players[key]["playerCount"] = len(players)
