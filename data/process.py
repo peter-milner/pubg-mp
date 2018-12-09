@@ -47,7 +47,7 @@ KEYS = [
     "shardId",
     "isCustomMatch",
     "duration",
-    "match_id",
+    "matchId",
     "playerCount",
     "groupCount"
 ]
@@ -63,7 +63,7 @@ def matches_to_players(matches):
     for match in matches:
         # Extract general match information first
         attributes = match["data"]["attributes"]
-        attributes["match_id"] = match["data"]["id"]
+        attributes["matchId"] = match["data"]["id"]
         players = {}
         group_count = 0
         for obj in match["included"]:
