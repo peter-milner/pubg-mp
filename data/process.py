@@ -49,7 +49,8 @@ KEYS = [
     "duration",
     "matchId",
     "playerCount",
-    "groupCount"
+    "groupCount",
+    "groupRank"
 ]
 
 def import_matches(filename):
@@ -74,6 +75,7 @@ def matches_to_players(matches):
                 else:
                     players[obj["id"]] = obj["attributes"]["stats"]
                     players[obj["id"]]["groupId"] = -1
+                    players[obj["id"]]["groupRank"] = -1
                 #Add match attributes
                 players[obj["id"]].update(attributes)
             elif obj["type"] == "roster":
@@ -83,6 +85,7 @@ def matches_to_players(matches):
                     if participant["id"] not in players:
                         players[participant["id"]] = {}
                     players[participant["id"]]["groupId"] = obj["attributes"]["stats"]["teamId"]
+                    players[participant["id"]]["groupRank"] = obj["attributes"]["stats"]["rank"]
         # Add match player count to each player row (since it holds match info as well)
         for key in players:
             players[key]["playerCount"] = len(players)
