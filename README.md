@@ -15,3 +15,9 @@ Match Placement Prediction for the popular online game: PUBG
 ## Running
 
 ```pipenv run <command>```
+
+## Jupyter notebook
+
+To start it, run: ```pipenv run jupyter notebook```
+
+Figures are stored in /notebooks/figures
